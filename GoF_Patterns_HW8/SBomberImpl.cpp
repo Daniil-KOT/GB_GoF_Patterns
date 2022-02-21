@@ -125,12 +125,12 @@ void SBomberImpl::ProcessKBHit()
         break;
 
     case 'd':
-        //DropBomb(true);
+        DropBomb(true);
         DuplicateDestroyableGroundObject();
         break;
 
     case 'D':
-        //DropBomb(true);
+        DropBomb(true);
         DuplicateDestroyableGroundObject();
         break;
 
@@ -216,7 +216,7 @@ void SBomberImpl::CheckBombsAndGround()
     const double y = pGround->GetY();
     for (size_t i = 0; i < vecBombs.size(); i++)
     {
-        if (vecBombs[i]->GetY() >= y) // Пересечение бомбы с землей
+        if (vecBombs[i]->GetY() >= y) // ГЏГҐГ°ГҐГ±ГҐГ·ГҐГ­ГЁГҐ ГЎГ®Г¬ГЎГ» Г± Г§ГҐГ¬Г«ГҐГ©
         {
             pGround->AddCrater(vecBombs[i]->GetX());
             CheckDestoyableObjects(vecBombs[i]);
@@ -414,7 +414,7 @@ void SBomberImpl::AnimateScrolling()
     
     logger_->WriteToLog(string(__FUNCTION__) + " was invoked");
 
-    const size_t windowHeight = 10; // Размер окна для скроллинга
+    const size_t windowHeight = 10; // ГђГ Г§Г¬ГҐГ° Г®ГЄГ­Г  Г¤Г«Гї Г±ГЄГ°Г®Г«Г«ГЁГ­ГЈГ 
     const size_t startX = (MyTools::GetMaxX() / 2) - (ScrollWidth / 2);
     const size_t startY = (MyTools::GetMaxY() / 2) - (windowHeight / 2);
     double curPos = 0;
